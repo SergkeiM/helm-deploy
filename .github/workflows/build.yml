@@ -55,7 +55,7 @@ jobs:
           images: "ghcr.io/froxz/helm"
           tags: |
             ${{ env.NEW_VERSION }}
-            latest
+            ${{ env.RELEASE_TAG }}
 
       # Commit changes
       - name: Commit changes and create tag

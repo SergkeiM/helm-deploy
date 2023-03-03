@@ -56,7 +56,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: 'Deploy'
-      uses: 'froxz/helm@v1'
+      uses: 'froxz/helm-deploy@v1'
       with:
         release: 'nginx'
         namespace: 'default'
@@ -89,7 +89,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Deploy'
-      uses: 'froxz/helm@v1'
+      uses: 'froxz/helm-deploy@v1'
       with:
         # Task remove means to remove the helm release.
         task: 'remove'
