@@ -78,7 +78,7 @@ jobs:
       - name: Push changes to repository
         run: git push origin && git push --tags
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       # Read version changelog
       - name: Get version changelog
         id: get-changelog
