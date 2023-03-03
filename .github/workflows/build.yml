@@ -52,7 +52,7 @@ jobs:
       - uses: docker/metadata-action@v4
         id: meta
         with:
-          images: "ghcr.io/froxz/helm"
+          images: "ghcr.io/froxz/helm-deploy"
           tags: |
             ${{ env.NEW_VERSION }}
             latest

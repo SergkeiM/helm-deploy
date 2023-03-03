@@ -44,4 +44,4 @@ inputs:
     required: false
 runs:
   using: docker
-  image: docker://ghcr.io/froxz/helm
+  image: docker://ghcr.io/froxz/helm-deploy
