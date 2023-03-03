@@ -67,21 +67,21 @@ jobs:
 
       - name: Build image
         uses: docker/build-push-action@v4
-          with:
-            context: .
-            push: true
-            tags: ${{ steps.meta.outputs.tags }}
-            labels: ${{ steps.meta.outputs.labels }}
-            cache-from: type=gha
-            cache-to: type=gha,mode=max
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       # Push repository changes
       - name: Push changes to repository
         run: git push origin && git push --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Read version changelog
-      - id: get-changelog
-        name: Get version changelog
+      - name: Get version changelog
+        id: get-changelog
         uses: superfaceai/release-changelog-action@v1
         with:
           path-to-changelog: CHANGELOG.md
