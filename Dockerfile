@@ -7,11 +7,9 @@ RUN curl -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts
     chmod +x get_helm.sh && \
     ./get_helm.sh
 
-WORKDIR /usr/src/app
-
-COPY src ./
-COPY package*.json ./
+COPY src /usr/src
+COPY package*.json /usr/src
 
 RUN npm ci
 
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["node", "/usr/src/index.js"]
