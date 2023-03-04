@@ -23,9 +23,10 @@ export const render = (files, data) => {
 
         await envsub({
             templateFile: `${outputFile}.tpl`,
-            outputFile
-        }, {
-            syntax: 'dollar-both',
+            outputFile,
+            options: {
+                syntax: 'dollar-both'
+            }
         })
         
     });
