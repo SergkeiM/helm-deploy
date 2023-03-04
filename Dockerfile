@@ -10,6 +10,6 @@ RUN curl -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts
 COPY src /usr/src
 COPY package*.json /usr/src
 
-RUN npm ci
+RUN npm ci --prefix /usr/src
 
 ENTRYPOINT ["node", "/usr/src/index.js"]
