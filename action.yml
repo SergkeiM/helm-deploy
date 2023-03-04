@@ -1,4 +1,4 @@
-name: Helm Deploy
+name: Helm Deploy Release
 description: Deploys a helm chart to Kubernetes
 author: Froxz
 branding:
