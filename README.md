@@ -37,7 +37,6 @@ The following syntax allows variables to be used in value files:
 Automatically substituting environment variables in values files.
 
 - `${MY_VAR}`: References env variable passed in env.
-- `$MY_VAR`: References env variable passed in env.
 - `${MY_VAR:-default}`: References env variable passed in env, if not set uses default value.
 
 ## Example

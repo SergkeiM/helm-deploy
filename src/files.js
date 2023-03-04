@@ -25,7 +25,7 @@ export const render = (files, data) => {
             templateFile: `${outputFile}.tpl`,
             outputFile,
             options: {
-                syntax: 'dollar-both'
+                syntax: 'dollar-curly'
             }
         })
         
