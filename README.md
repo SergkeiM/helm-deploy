@@ -30,11 +30,11 @@ Required and Optional Inputs.
 The following syntax allows variables to be used in value files:
 
 - `${{ secrets.KEY }}`: References secret variables passed in the secrets input action.
-- `${{ vars.KEY }}`: References secret variables passed in the secrets input action.
+- `${{ vars.KEY }}`: References var variables passed in the vars input action.
 
 ### Environment variable substitution
 
-Automatically substituting environment variables in values files.
+Automatically substituting environment variables in values files. (Uses [envsub](https://github.com/danday74/envsub#envsub---syntax-flag--envsub---syntax-handlebars-templatefile-outputfile)) `dollar-curly` syntax
 
 - `${MY_VAR}`: References env variable passed in env.
 - `${MY_VAR:-default}`: References env variable passed in env, if not set uses default value.
