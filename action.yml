@@ -42,6 +42,9 @@ inputs:
   version:
     description: Version of the app, usually commit sha works here.
     required: false
+  timeout:
+    description: A Go duration value to wait for Kubernetes commands to complete. This defaults to 5m0s.
+    required: false
 runs:
   using: docker
   image: docker://ghcr.io/froxz/helm-deploy

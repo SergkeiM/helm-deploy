@@ -3,6 +3,9 @@ import envsub from 'envsub'
 import mustache from 'mustache'
 import { debug } from '@actions/core'
 
+//Do not escape HTML (Things like: / or = are escaped to &#x2F; &#x3D;)
+mustache.escape(value => value)
+
 const tags = ["${{", "}}"];
 
 /**

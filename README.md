@@ -8,9 +8,9 @@ Deploys a helm chart using GitHub actions.
 
 Required and Optional Inputs.
 
-- `release`: Helm release name. Will be combined with track if set. (required)
+- `release`: Helm release name. (required)
 - `namespace`: Kubernetes namespace name. (required)
-- `chart`: Helm chart path. If set to "app" this will use the built in helm chart found in this repository. (required)
+- `chart`: Helm chart path. (required)
 - `values`: Value files to apply to the helm chart. Expects a JSON encoded array or a string.
 - `task`: Task name. If the task is "remove" it will remove the configured helm release.
 - `dry-run`: Helm dry-run option.
@@ -18,12 +18,12 @@ Required and Optional Inputs.
 - `vars`: Variables to include in value file interpolation. Expects a JSON encoded map.
 - `version`: Version of the app, usually commit sha works here.
 - `chart-version`: The version of the helm chart you want to deploy (distinct from app version)
-- `timeout`: specify a timeout for helm deployment
+- `timeout`: A [Go duration](https://pkg.go.dev/time#ParseDuration) value to wait for Kubernetes commands to complete. This defaults to 5m0s.
 - `atomic`: If true, upgrade process rolls back changes made in case of failed upgrade. Defaults to true.
 
 ### Environment
 
-- `KUBECONFIG_FILE`: Kubeconfig file for Kubernetes cluster access.
+- `KUBECONFIG_FILE`: Kubeconfig file for Kubernetes cluster access. (required)
 
 ### Value file interpolation
 
