@@ -45,6 +45,9 @@ inputs:
   timeout:
     description: A Go duration value to wait for Kubernetes commands to complete. This defaults to 5m0s.
     required: false
+  args:
+    description: "List of deploy-time args"
+    required: false
 runs:
   using: docker
   image: docker://ghcr.io/froxz/helm-deploy

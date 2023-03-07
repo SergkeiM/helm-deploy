@@ -11,6 +11,7 @@ Required and Optional Inputs.
 - `release`: Helm release name. (required)
 - `namespace`: Kubernetes namespace name. (required)
 - `chart`: Helm chart path. (required)
+- `args`: List of deploy-time args
 - `values`: Value files to apply to the helm chart. Expects a JSON encoded array or a string.
 - `task`: Task name. If the task is "remove" it will remove the configured helm release.
 - `dry-run`: Helm dry-run option.

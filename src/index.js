@@ -4,6 +4,8 @@ import * as exec from '@actions/exec'
 import * as files from './files.js'
 import * as utils from './utils.js'
 
+import { Util } from '@docker/actions-toolkit/lib/util';
+
 /**
  * Run executes the helm deployment.
  */
@@ -25,6 +27,10 @@ async function run() {
         const secrets = utils.vars(core.getInput("secrets"));
         const vars = utils.vars(core.getInput("vars"));
         const atomic = utils.input("atomic") || true;
+
+        const inputArgs = Util.getInputList('args', {
+            ignoreComma: true
+        })
 
         core.debug(`param: release = "${release}"`);
         core.debug(`param: namespace = "${namespace}"`);
@@ -54,6 +60,8 @@ async function run() {
             `--namespace=${namespace}`,
         ];
 
+        inputArgs.forEach(arg => args.push(arg));
+        
         values.forEach(f => args.push(`--values=${f}`));
 
         if (dryRun) args.push("--dry-run");
