@@ -4,7 +4,7 @@ import * as exec from '@actions/exec'
 import * as files from './files.js'
 import * as utils from './utils.js'
 
-import { Util } from '@docker/actions-toolkit/lib/util';
+import { Util } from '@docker/actions-toolkit/lib/util.js';
 
 /**
  * Run executes the helm deployment.
