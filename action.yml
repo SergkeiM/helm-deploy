@@ -15,8 +15,7 @@ inputs:
     description: Path to Helm chart. (required)
     required: true
   task:
-    description: Task name. If the task is "remove" it will remove the configured
-      helm release.
+    description: Task name. If the task is "remove" it will remove the configured helm release.
     required: false
   dry-run:
     description: Simulate an upgrade.
@@ -25,16 +24,13 @@ inputs:
     description: If true, upgrade process rolls back changes made in case of failed upgrade. Defaults to true.
     required: false
   values:
-    description: Value files to apply to the helm chart. Expects JSON encoded
-      array or a string.
+    description: Value files to apply to the helm chart. Expects JSON encoded array or a string.
     required: false
   vars:
-    description: Variables to include in value file interpolation. Expects
-      JSON encoded map.
+    description: Variables to include in value file interpolation. Expects JSON encoded map.
     required: false
   secrets:
-    description: Secret variables to include in value file interpolation. Expects
-      JSON encoded map.
+    description: Secret variables to include in value file interpolation. Expects JSON encoded map.
     required: false
   chart-version:
     description: Chart Version
@@ -46,8 +42,11 @@ inputs:
     description: A Go duration value to wait for Kubernetes commands to complete. This defaults to 5m0s.
     required: false
   args:
-    description: "List of deploy-time args"
+    description: List of deploy-time args
     required: false
 runs:
   using: docker
   image: docker://ghcr.io/froxz/helm-deploy
+action:
+  runs:
+    image: docker://ghcr.io/froxz/helm-deploy:v1.0.8
