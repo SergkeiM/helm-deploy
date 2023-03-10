@@ -49,4 +49,4 @@ runs:
   image: docker://ghcr.io/froxz/helm-deploy
 action:
   runs:
-    image: docker://ghcr.io/froxz/helm-deploy:v1.0.10
+    image: docker://ghcr.io/froxz/helm-deploy:v1.0.11
