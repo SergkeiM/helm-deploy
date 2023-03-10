@@ -100,10 +100,10 @@ jobs:
       
       # Update GitHub release with changelog
       - name: Update GitHub release documentation
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v1
         with:
-          makeLatest: true
-          tag: ${{ env.NEW_VERSION }}
+          tag_name: ${{ env.NEW_VERSION }}
           body: ${{ steps.get-changelog.outputs.changelog }}
           prerelease: ${{ startsWith(github.event.inputs.release-type, 'pre') }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
