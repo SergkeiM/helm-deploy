@@ -1,6 +1,6 @@
 {
-    "name": "helm",
-    "version": "1.0.0",
+    "name": "helm-deploy",
+    "version": "1.0.7",
     "main": "index.js",
     "type": "module",
     "license": "MIT",
