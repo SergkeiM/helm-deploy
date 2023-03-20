@@ -42,7 +42,7 @@ jobs:
       - uses: docker/metadata-action@v4
         id: meta
         with:
-          images: "ghcr.io/froxz/helm-deploy"
+          images: "ghcr.io/sergkeim/helm-deploy"
           tags: |
             ${{ env.NEW_VERSION }}
             latest
@@ -71,7 +71,7 @@ jobs:
         with:
           valueFile: 'action.yml'
           propertyPath: 'action.runs.image'
-          value: docker://ghcr.io/froxz/helm-deploy:${{ env.NEW_VERSION }}
+          value: docker://ghcr.io/sergkeim/helm-deploy:${{ env.NEW_VERSION }}
           commitChange: false
       
       # Commit changes
