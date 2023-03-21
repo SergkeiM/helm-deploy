@@ -46,4 +46,4 @@ inputs:
     required: false
 runs:
   using: docker
-  image: docker://ghcr.io/sergkeim/helm-deploy:v1.2.0
+  image: docker://ghcr.io/sergkeim/helm-deploy:v1.2.1
