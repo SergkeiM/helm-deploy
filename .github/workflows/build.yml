@@ -70,7 +70,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'action.yml'
-          propertyPath: 'action.runs.image'
+          propertyPath: 'runs.image'
           value: docker://ghcr.io/sergkeim/helm-deploy:${{ env.NEW_VERSION }}
           commitChange: false
       
